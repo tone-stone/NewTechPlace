@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +25,29 @@
     <link rel="stylesheet" href="assets/css/slick.css">
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .video-overlay {
+            position: absolute;
+            background-color: rgba(22, 34, 57, 0.85);
+            top: 0;
+            left: 0;
+            bottom: 7px;
+            width: 100%;
+        }
+
+        #bg-video {
+            min-width: 100%;
+            min-height: 100vh;
+            max-width: 100%;
+            max-height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        #bg-video::-webkit-media-controls {
+            display: none !important;
+        }
+    </style>
 
 </head>
 
@@ -34,7 +58,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/loder.png" alt="">
+                    <img src="assets/img/logo/TecPlaTrans.png" alt="">
                 </div>
             </div>
         </div>
@@ -95,26 +119,39 @@
     </header>
 
     <main>
+
+
         <!-- Slider Area Start-->
-        <div class="slider-area slider-bg ">
-            <div class="slider-active">
-                <!-- Single Slider -->
-                <div class="single-slider d-flex align-items-center slider-height ">
+        <div class="slider-area">
+            <video autoplay loop muted playsinline class="video-bg" style="position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:cover; 
+    z-index: -1;
+     ">
+                <source src="./assets/img/bg.mp4" type="video/mp4">
+                Tu navegador no soporta videos en HTML5.
+            </video>
+
+            <!-- Single Slider -->
+            <div class="slider-active" style="position: relative;z-index: 1;">
+                <div class="single-slider d-flex align-items-center slider-height">
                     <div class="container">
                         <div class="row align-items-center justify-content-between">
-                            <div class="col-xl-5 col-lg-5 col-md-9 ">
+                            <div class="col-xl-5 col-lg-5 col-md-9">
                                 <div class="hero__caption">
                                     <span data-animation="fadeInLeft" data-delay=".3s">Transformamos tus ideas en
                                         realidades digitales</span>
-                                    <h1 data-animation="fadeInLeft" data-delay=".6s ">TechPlaceTj</h1>
+                                    <h1 data-animation="fadeInLeft" data-delay=".6s">TechPlaceTj</h1>
                                     <p data-animation="fadeInLeft" data-delay=".8s">Ofrecemos soluciones integrales en
-                                        Desarrollo de Software, Seguridad Informática y más,
-                                        adaptadas a tus necesidades.</p>
+                                        Desarrollo de Software, Seguridad Informática y más, adaptadas a tus
+                                        necesidades.</p>
                                     <!-- Slider btn -->
                                     <div class="slider-btns">
-                                        <!-- Hero-btn -->
                                         <a data-animation="fadeInLeft" data-delay="1s" href="contact.html"
-                                            class="btn radius-btn">Contactanos</a>
+                                            class="btn radius-btn">Contáctanos</a>
                                     </div>
                                 </div>
                             </div>
@@ -127,37 +164,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- Single Slider -->
-                <div class="single-slider d-flex align-items-center slider-height ">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6 col-md-9 ">
-                                <div class="hero__caption">
-                                    <span data-animation="fadeInLeft" data-delay=".3s">Best Domain & hosting service
-                                        provider</span>
-                                    <h1 data-animation="fadeInLeft" data-delay=".6s">Powerful web hosting</h1>
-                                    <p data-animation="fadeInLeft" data-delay=".8s">Supercharge your WordPress hosting
-                                        with detailed
-                                        website analytics, marketing tools, security, and data
-                                        backups all in one place.</p>
-                                    <!-- Slider btn -->
-                                    <div class="slider-btns">
-                                        <!-- Hero-btn -->
-                                        <a data-animation="fadeInLeft" data-delay="1s" href="industries.html"
-                                            class="btn radius-btn">get started</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="hero__img d-none d-lg-block f-right">
-                                    <img src="assets/img/hero/hero_right.png" alt="" data-animation="fadeInRight"
-                                        data-delay="1s">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
+
             <!-- Slider Shape -->
             <div class="slider-shape d-none d-lg-block">
                 <img class="slider-shape1" src="assets/img/hero/top-left-shape.png" alt="">
@@ -165,25 +173,37 @@
         </div>
         <!-- Slider Area End -->
 
+
         <!--? Start Align Area -->
         <div class="whole-wrap">
             <div class="container box_1170">
 
-                <div class="section-top-border text-right">
-                    <h3 class="mb-30"></h3>
-                    <div class="row">
-                        <div class="col-md-9">
-                            <p class="text-right">En Tech Place, estamos comprometidos a ofrecerte soluciones de
-                                vanguardia en servicios de IT, desarrollo web y seguridad informática. Nos enorgullece
-                                ser tu socio tecnológico, brindándote las herramientas y el conocimiento necesario para
-                                impulsar el éxito de tu negocio en la era digital.</p>
-                            <p class="text-right">Nos enorgullece ser tu socio tecnológico, brindándote
-                                las herramientas y el conocimiento necesario para impulsar
-                                el éxito de tu negocio en la era digital.</p>
-                        </div>
-                        <div class="col-md-3 hero__img d-none d-lg-block f-right">
-                            <img src="assets/img/logo/TechPlaceLogo.jpg" alt="" class="img-fluid" style="height: 120px;"
-                                data-animation="fadeInRight" data-delay="1s">
+                <div class="single-slider d-flex align-items-center section-top-border ">
+                    <div class="container">
+                        <div class="row ">
+                            <div class="col-md-9">
+                                <div>
+                                    <p class="text-left" data-animation="fadeInLeft" data-delay=".4s">En Tech Place,
+                                        estamos
+                                        comprometidos a ofrecerte soluciones de
+                                        vanguardia en servicios de IT, desarrollo web y seguridad informática. Nos
+                                        enorgullece
+                                        ser tu socio tecnológico, brindándote las herramientas y el conocimiento
+                                        necesario
+                                        para
+                                        impulsar el éxito de tu negocio en la era digital.</p>
+                                    <p class="text-left " data-animation="fadeInLeft" data-delay=".4s">Nos enorgullece
+                                        ser
+                                        tu
+                                        socio tecnológico, brindándote
+                                        las herramientas y el conocimiento necesario para impulsar
+                                        el éxito de tu negocio en la era digital.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 f-right">
+                                <img src="assets/img/logo/TechPlaceLogo.jpg" alt="" class="img-fluid"
+                                    style="height: 120px;" data-animation="fadeInRight" data-delay="1s">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -235,7 +255,8 @@
                             </div>
                             <div class="cat-cap">
                                 <h5><a href="#">Infrestructura de Redes</a></h5>
-                                <p>Construimos y optimizamos redes de alto rendimiento para que tu negocio funcione sin
+                                <p>Construimos y optimizamos redes de alto rendimiento para que tu negocio funcione
+                                    sin
                                     interrupciones y con máxima eficiencia.</p>
                             </div>
                         </div>
@@ -247,7 +268,8 @@
                             </div>
                             <div class="cat-cap">
                                 <h5><a href="#">Desarrollo de Software</a></h5>
-                                <p>Transforma tus ideas en realidad con soluciones de software personalizadas diseñadas
+                                <p>Transforma tus ideas en realidad con soluciones de software personalizadas
+                                    diseñadas
                                     para cumplir los objetivos de tu negocio.</p>
                             </div>
                         </div>
@@ -259,7 +281,8 @@
                             </div>
                             <div class="cat-cap">
                                 <h5><a href="#">Soporte Tecnico</a></h5>
-                                <p>Resolvemos tus problemas tecnológicos con rapidez y eficiencia, asegurando que tus
+                                <p>Resolvemos tus problemas tecnológicos con rapidez y eficiencia, asegurando que
+                                    tus
                                     sistemas funcionen a la perfección.</p>
                             </div>
                         </div>
@@ -287,8 +310,10 @@
                     <div class="col-xl-8 col-lg-8">
                         <div class="section-tittle text-center mb-90">
                             <h2>Principales Servicios</h2>
-                            <p>Ofrecemos soluciones integrales en desarrollo web, seguridad informática y más, adaptadas
-                                a tus necesidades. En TechPlace, transformamos tus ideas en realidades digitales. Con
+                            <p>Ofrecemos soluciones integrales en desarrollo web, seguridad informática y más,
+                                adaptadas
+                                a tus necesidades. En TechPlace, transformamos tus ideas en realidades digitales.
+                                Con
                                 nuestro equipo de expertos, garantizamos servicios de calidad y seguridad para tu
                                 negocio. ¡Descubre más!.</p>
                         </div>
@@ -381,8 +406,10 @@
                             <div class="section-tittle section-tittle2 mb-30">
                                 <h2>Analizamos tus necesidades y diseñamos soluciones a medida</h2>
                             </div>
-                            <p class="mb-40">En Tech Place, estamos comprometidos a ofrecerte soluciones de vanguardia
-                                en servicios de IT, desarrollo de software y seguridad informática. Nos enorgullece ser
+                            <p class="mb-40">En Tech Place, estamos comprometidos a ofrecerte soluciones de
+                                vanguardia
+                                en servicios de IT, desarrollo de software y seguridad informática. Nos enorgullece
+                                ser
                                 tu socio tecnológico, brindándote las herramientas y el conocimiento necesario para
                                 impulsar el éxito de tu negocio en la era digital.</p>
                             <ul>
@@ -397,7 +424,8 @@
                                 </li>
                                 <li>
                                     <img src="assets/img/icon/right.svg" alt="">
-                                    <p>Optimizamos y mantenemos tus sistemas y dispositivos para un rendimiento óptimo.
+                                    <p>Optimizamos y mantenemos tus sistemas y dispositivos para un rendimiento
+                                        óptimo.
                                     </p>
                                 </li>
                             </ul>
@@ -422,16 +450,20 @@
                             <ul class="mb-30">
                                 <li>
                                     <img src="assets/img/icon/right.svg" alt="">
-                                    <p>Ing. En Desarrollo de Software, con mas de 10 años en experiencia en soporte IT y
+                                    <p>Ing. En Desarrollo de Software, con mas de 10 años en experiencia en soporte
+                                        IT y
                                         la implementacion de soluciones mediante metodologias agiles. Investigador
-                                        autodidacta en nuevas tecnologias como ioT, Apps Moviles y Ciencias de Datos.
+                                        autodidacta en nuevas tecnologias como ioT, Apps Moviles y Ciencias de
+                                        Datos.
                                     </p>
                                 </li>
                                 <li>
                                     <img src="assets/img/icon/right.svg" alt="">
-                                    <p>Ing. En Telecomunicaciones, con mas de 15 años de experiencia como profesionista.
+                                    <p>Ing. En Telecomunicaciones, con mas de 15 años de experiencia como
+                                        profesionista.
                                         Experto en infraestructura de redes y seguridad Informatica. Manejo de
-                                        servidores de correo enterprice. Implementacion de servidores en la nube VPS,
+                                        servidores de correo enterprice. Implementacion de servidores en la nube
+                                        VPS,
                                         migraciones de sitios, hosting y dominios. </p>
                                 </li>
                             </ul>
@@ -456,7 +488,8 @@
                         <!-- Section Tittle -->
                         <div class="section-tittle text-center mb-90">
                             <h2>Por que elegir TechPlaceTj</h2>
-                            <p>En Tech Place, nos enorgullece ofrecer soluciones tecnológicas de vanguardia que marcan
+                            <p>En Tech Place, nos enorgullece ofrecer soluciones tecnológicas de vanguardia que
+                                marcan
                                 la diferencia. Aquí te presentamos algunas razones por las cuales somos la elección
                                 ideal para tus necesidades digitales:</p>
                         </div>
@@ -468,13 +501,18 @@
                             <span> A.</span>
                             <div class="pera">
                                 <h2>Experiencia y profesionalismo.</h2>
-                                <p>En el núcleo de Tech Place yace un equipo dedicado, formado por expertos altamente
-                                    cualificados en diversas disciplinas tecnológicas. Nuestro personal no solo posee
-                                    una sólida formación, sino que también cuenta con una amplia experiencia en campos
-                                    que abarcan desde el desarrollo web hasta la seguridad informática. Cada miembro de
+                                <p>En el núcleo de Tech Place yace un equipo dedicado, formado por expertos
+                                    altamente
+                                    cualificados en diversas disciplinas tecnológicas. Nuestro personal no solo
+                                    posee
+                                    una sólida formación, sino que también cuenta con una amplia experiencia en
+                                    campos
+                                    que abarcan desde el desarrollo web hasta la seguridad informática. Cada miembro
+                                    de
                                     nuestro equipo aporta un conjunto único de habilidades, fusionando conocimientos
                                     para ofrecer soluciones integrales. Nos comprometemos a la excelencia en cada
-                                    proyecto, asegurando que la combinación de experiencia y profesionalismo se refleje
+                                    proyecto, asegurando que la combinación de experiencia y profesionalismo se
+                                    refleje
                                     en cada línea de código que escribimos y en cada desafío que enfrentamos.</p>
                             </div>
                         </div>
@@ -486,10 +524,12 @@
                                 <h2>Compromiso con la Seguridad.</h2>
                                 <p>En Tech Place, la seguridad es más que una práctica estándar; es un compromiso
                                     intrínseco que permea cada aspecto de nuestro trabajo. Desde el primer día,
-                                    implementamos las mejores prácticas de seguridad en cada línea de código escrita y
+                                    implementamos las mejores prácticas de seguridad en cada línea de código escrita
+                                    y
                                     en cada red que protegemos. Nos tomamos en serio la salvaguarda de tus datos y
                                     sistemas, adoptando un enfoque proactivo para identificar y mitigar posibles
-                                    riesgos. Al elegir Tech Place, eliges un socio comprometido con la integridad y la
+                                    riesgos. Al elegir Tech Place, eliges un socio comprometido con la integridad y
+                                    la
                                     confidencialidad de tu información, asegurando un entorno digital seguro y
                                     protegido.</p>
                             </div>
@@ -502,11 +542,14 @@
                                 <h2>Transparencia y Comunicacion.</h2>
                                 <p>Creemos que la transparencia y la comunicación abierta son fundamentales para
                                     construir relaciones sólidas y exitosas. En cada etapa de tu proyecto, desde la
-                                    planificación hasta la implementación y más allá, mantenerte informado es nuestra
+                                    planificación hasta la implementación y más allá, mantenerte informado es
+                                    nuestra
                                     prioridad. Fomentamos una comunicación abierta y accesible, asegurándonos de que
                                     estés al tanto de los progresos, desafíos y logros. Tu participación activa y tu
-                                    comprensión completa son esenciales para nosotros. En Tech Place, no solo entregamos
-                                    soluciones, construimos asociaciones basadas en la confianza y la transparencia.</p>
+                                    comprensión completa son esenciales para nosotros. En Tech Place, no solo
+                                    entregamos
+                                    soluciones, construimos asociaciones basadas en la confianza y la transparencia.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -516,13 +559,16 @@
                             <div class="pera">
                                 <h2>Innovacion Constante.</h2>
                                 <p>En el vertiginoso mundo tecnológico, la innovación es la clave para destacar y
-                                    sobresalir. En Tech Place, abrazamos la innovación como parte integral de nuestro
+                                    sobresalir. En Tech Place, abrazamos la innovación como parte integral de
+                                    nuestro
                                     ADN. Nos mantenemos a la vanguardia de las últimas tendencias y tecnologías,
                                     asegurando que tu proyecto esté equipado con las herramientas más avanzadas y
-                                    eficientes disponibles. Desde la adopción de nuevas metodologías de desarrollo hasta
+                                    eficientes disponibles. Desde la adopción de nuevas metodologías de desarrollo
+                                    hasta
                                     la implementación de tecnologías emergentes, estamos dedicados a impulsar la
                                     innovación constante. Al elegir Tech Place, eliges un socio que está un paso
-                                    adelante, listo para llevar tu proyecto al futuro digital con creatividad y visión.
+                                    adelante, listo para llevar tu proyecto al futuro digital con creatividad y
+                                    visión.
                                 </p>
                             </div>
                         </div>
@@ -546,7 +592,8 @@
                     <div class="row gallery-item">
                         <div class="col-md-4">
                             <a href="assets/img/gallery/cervantes.png" class="img-pop-up">
-                                <div class="single-gallery-image" style="background: url(assets/img/gallery/cervantes2.png);">
+                                <div class="single-gallery-image"
+                                    style="background: url(assets/img/gallery/cervantes2.png);">
                                 </div>
                             </a>
                         </div>
@@ -597,7 +644,7 @@
             </div>
         </div>
 
-       
+
     </main>
 
     <footer>
@@ -609,10 +656,11 @@
                             <div class="single-footer-caption mb-50">
                                 <!-- logo -->
                                 <div class="footer-logo mb-25">
-                                    <a href="index.html"><img src="assets/img/logo/logoLetra.png" style="height: 50px;" alt="logoLetra"></a>
+                                    <a href="index.html"><img src="assets/img/logo/logoLetra.png" style="height: 50px;"
+                                            alt="logoLetra"></a>
                                 </div>
                                 <div class="footer-tittle mb-50">
-                                    <p>Subscribe our newsletter to get updates about our services</p>
+                                    <p>Contactanos para mas informacion</p>
                                 </div>
                                 <!-- Form -->
                                 <div class="footer-form">
@@ -621,13 +669,12 @@
                                             action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
                                             method="get" class="subscribe_form relative mail_part" novalidate="true">
                                             <input type="email" name="EMAIL" id="newsletter-form-email"
-                                                placeholder=" Email Address " class="placeholder hide-on-focus"
-                                                onfocus="this.placeholder = ''"
-                                                onblur="this.placeholder = 'Your email address'">
+                                                placeholder=" Tu Correo " class="placeholder hide-on-focus"
+                                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tu Correo'">
                                             <div class="form-icon">
                                                 <button type="submit" name="submit" id="newsletter-submit"
                                                     class="email_icon newsletter-submit button-contactForm">
-                                                    Subscribe
+                                                    Contactar
                                                 </button>
                                             </div>
                                             <div class="mt-10 info"></div>
@@ -646,13 +693,13 @@
                         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-5">
                             <div class="single-footer-caption mb-50">
                                 <div class="footer-tittle">
-                                    <h4>Company</h4>
+                                    <h4>Links</h4>
                                     <ul>
-                                        <li><a href="#">Why choose us</a></li>
-                                        <li><a href="#"> Review</a></li>
-                                        <li><a href="#">Customers</a></li>
-                                        <li><a href="#">Blog</a></li>
-                                        <li><a href="#">Carrier</a></li>
+                                        <li><a href="#">Servicios</a></li>
+                                        <li><a href="#">Nosotros</a></li>
+                                        <li><a href="#">Portafolio</a></li>
+                                        <li><a href="#">Contacto</a></li>
+                                        <li><a href="#">Inicio</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -660,13 +707,13 @@
                         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-5">
                             <div class="single-footer-caption mb-50">
                                 <div class="footer-tittle">
-                                    <h4>Products</h4>
+                                    <h4>Servicios</h4>
                                     <ul>
-                                        <li><a href="#">Why choose us</a></li>
-                                        <li><a href="#"> Review</a></li>
-                                        <li><a href="#">Customers</a></li>
-                                        <li><a href="#">Blog</a></li>
-                                        <li><a href="#">Carrier</a></li>
+                                        <li><a href="#">Dominios</a></li>
+                                        <li><a href="#">Hosting</a></li>
+                                        <li><a href="#">Desarrollo WEB</a></li>
+                                        <li><a href="#">CiberSeguridad</a></li>
+                                        <li><a href="#">SoporteTecnico</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -674,13 +721,13 @@
                         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-5">
                             <div class="single-footer-caption mb-50">
                                 <div class="footer-tittle">
-                                    <h4>Support</h4>
+                                    <h4>Contacto</h4>
                                     <ul>
-                                        <li><a href="#">Technology</a></li>
-                                        <li><a href="#"> Products</a></li>
-                                        <li><a href="#">Customers</a></li>
-                                        <li><a href="#">Quality</a></li>
-                                        <li><a href="#">Sales geography</a></li>
+                                        <li><a href="#">664-342 5615</a></li>
+                                        <li><a href="#">soporte@techplacetj.com</a></li>
+                                        <li><a href="#">Lunes/Viernes</a></li>
+                                        <li><a href="#">9-4pm</a></li>
+                                        <li><a href="#">Tijuana BC</a></li>
                                     </ul>
                                 </div>
                             </div>
