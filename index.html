@@ -280,6 +280,32 @@
             transform: translateY(-0.25rem);
             /* hover:-translate-y-1 */
         }
+
+        /* líneas de la hamburguesa */
+        .line {
+            width: 1.75rem;
+            height: 2px;
+            margin: .22rem 0;
+            background: #d8b4fe;
+            transition: all .35s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        /* estado “X” */
+        #menu-btn.open .line:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        #menu-btn.open .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        #menu-btn.open .line:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .backdrop-filter {
+            backdrop-filter: blur(8px);
+        }
     </style>
 </head>
 
@@ -287,15 +313,17 @@
 
     <!-- Navbar -->
     <nav id="navbar" class="fixed top-0 left-0 w-full navbar-bg-light shadow z-50 transition-all duration-300">
+
         <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
-            <a href="#" class="flex items-center space-x-2">
+            <!-- Logo -->
+            <a href="#home" class="flex items-center gap-3">
                 <img src="assets/img/logos/Techplace logos-05.png" alt="Logo TechPlace"
-                    class="h-12 rounded-full p-1 shadow-xl">
-                <span class="font-orbitron font-extrabold text-2xl text-purple-200 tracking-wider"><img
-                        src="assets/img/logos/Techplace logos-07.PNG" class="h-12  rounded-full p-1 shadow-xl"
-                        alt="logo nombre"></span>
+                    class="h-10 w-10 rounded-full shadow-lg">
+                <img src="assets/img/logos/Techplace logos-07.PNG" alt="TechPlace" class="h-8 sm:h-10 object-contain">
             </a>
-            <div class="hidden md:flex space-x-8 text-lg font-semibold">
+
+            <!-- Menú escritorio -->
+            <div class="hidden md:flex items-center gap-8 text-lg font-semibold">
                 <a href="#home" class="nav-link-underline active">Inicio</a>
                 <a href="#servicios" class="nav-link-underline">Servicios</a>
                 <a href="#nosotros" class="nav-link-underline">Nosotros</a>
@@ -303,27 +331,39 @@
                 <a href="#contacto" class="nav-link-underline">Contacto</a>
                 <a href="login.html" class="nav-link-underline">Entrar</a>
             </div>
-            <!-- Hamburguesa animada -->
-            <button id="menu-btn"
-                class="md:hidden flex flex-col justify-center items-center w-12 h-12 focus:outline-none group">
-                <span
-                    class="block w-8 h-1 bg-purple-400 mb-1 transition-all duration-300 group-hover:bg-purple-300"></span>
-                <span
-                    class="block w-8 h-1 bg-purple-400 mb-1 transition-all duration-300 group-hover:bg-purple-300"></span>
-                <span class="block w-8 h-1 bg-purple-400 transition-all duration-300 group-hover:bg-purple-300"></span>
+
+            <!-- Botón hamburguesa / X -->
+            <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10
+               focus:outline-none transition-transform duration-300">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
             </button>
-        </div>
-        <!-- Menú móvil animado -->
-        <div id="mobile-menu"
-            class="fixed top-0 left-0 w-full h-full bg-gray-950 bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-6 text-xl text-white font-semibold transform scale-0 transition-transform duration-300 md:hidden">
-            <a href="#home" class="block nav-link-underline" onclick="toggleMenu()">Inicio</a>
-            <a href="#servicios" class="block nav-link-underline" onclick="toggleMenu()">Servicios</a>
-            <a href="#branding" class="block nav-link-underline" onclick="toggleMenu()">Nosotros</a>
-            <a href="#portafolio" class="block nav-link-underline" onclick="toggleMenu()">Portafolio</a>
-            <a href="#contacto" class="block nav-link-underline" onclick="toggleMenu()">Contacto</a>
-            <a href="login.html" class="block nav-link-underline" onclick="toggleMenu()">Entrar</a>
-        </div>
+
+            <!-- Panel móvil -->
+            <div id="mobile-menu" class="fixed inset-0 z-40 md:hidden
+            flex flex-col items-center justify-center gap-6 text-xl font-semibold
+            bg-gray-950 bg-opacity-70              /* oscurece */
+            backdrop-filter backdrop-blur-md       /* desenfoque */
+            transform scale-0 pointer-events-none  /* plegado */
+            transition-transform duration-300">
+
+                <!-- botón X interno -->
+                <button id="menu-close" class="absolute top-6 right-6 text-purple-200 text-3xl focus:outline-none">
+                    &times;
+                </button>
+
+                <a href="#home" class="nav-link-underline" onclick="toggleMenu()">Inicio</a>
+                <a href="#servicios" class="nav-link-underline" onclick="toggleMenu()">Servicios</a>
+                <a href="#nosotros" class="nav-link-underline" onclick="toggleMenu()">Nosotros</a>
+                <a href="#portafolio" class="nav-link-underline" onclick="toggleMenu()">Portafolio</a>
+                <a href="#contacto" class="nav-link-underline" onclick="toggleMenu()">Contacto</a>
+                <a href="login.html" class="nav-link-underline" onclick="toggleMenu()">Entrar</a>
+            </div>
+
+
     </nav>
+
 
     <!-- Hero Section con Video de Fondo -->
     <section id="home" class="relative flex items-center justify-center min-h-screen pt-24 pb-10 overflow-hidden">
@@ -618,8 +658,8 @@
                             class="text-purple-400 underline hover:text-purple-300" target="_blank">Visitar sitio</a>
                     </div>
                     <div class="swiper-slide bg-gray-800 rounded-2xl shadow-xl p-6 mx-4 flex flex-col items-center">
-                        <img src="assets/img/portafolio/edie.webp"
-                            class="rounded-lg mb-4 shadow-lg h-32 object-contain" alt="BajaSupply">
+                        <img src="assets/img/portafolio/edie.webp" class="rounded-lg mb-4 shadow-lg h-32 object-contain"
+                            alt="BajaSupply">
                         <h3 class="text-xl text-white font-bold mb-1">Escuela de Ingles Especializada</h3>
                         <p class="text-gray-400 text-sm mb-2">Desarrollo web y SEO local.</p>
                         <a href="https://industrialbajasupply.com/"
@@ -885,19 +925,7 @@
             // (Tu código navbar y tilt tal cual)
 
 
-            // Navbar mobile toggle
-            const menuBtn = document.getElementById('menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('scale-100');
-                    mobileMenu.classList.remove('scale-0');
-                } else {
-                    mobileMenu.classList.remove('scale-100');
-                    mobileMenu.classList.add('scale-0');
-                }
-            });
+
 
             // Navbar fondo oscuro scroll
             window.addEventListener('scroll', function () {
@@ -960,6 +988,26 @@
                 estado.classList.add('text-red-400');
             }
         });
+
+        // Espera que el DOM exista
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeBtn = document.getElementById('menu-close');
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('scale-0');
+                mobileMenu.classList.toggle('opacity-1');
+                mobileMenu.classList.toggle('pointer-events-none');
+                menuBtn.classList.toggle('open');
+            }
+
+            menuBtn.addEventListener('click', toggleMenu);
+            closeBtn.addEventListener('click', toggleMenu);       // “X”
+        });
+
+
 
         function toggleMenu() { document.getElementById('menu-btn').click(); }
     </script>
